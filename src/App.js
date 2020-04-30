@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route
+ } from 'react-router-dom'
+ import { connect } from 'react-redux'
 
-function App() {
+import CommonHeader from './pages/common/Header.jsx'
+import CommonFooter from './pages/common/Footer.jsx'
+import Homepage from './pages/Homepage.js'
+import ProductCategory from './pages/products/Category.jsx'
+import ProductProduct from './pages/products/Product.jsx'
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <CommonHeader breadcrumb={props.breadcrumb} />
+      <Switch>
+        <Route exact path='/' component={Homepage} />
+        <Route path='/catalog/:catalog_slug?' component={ProductCategory} />
+        <Route path='/product/:product_id?' component={ProductProduct} />
+      </Switch>
+      <CommonFooter /> 
+    </Router>
   );
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return ({
+    breadcrumb: state.globalReducer.breadcrumbs
+  })
+  }
+
+export default connect(mapStateToProps)(App);
