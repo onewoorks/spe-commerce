@@ -1,0 +1,47 @@
+import React from 'react'
+import { 
+    Link 
+} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux'
+
+const CommonHeader = (props) => {
+
+    const [ menu, setMenu ] = React.useState(false)
+
+    const OpenMenu = () => {
+        return (
+            <div style={{ position: 'absolute', width: '100%', zIndex:100} } className={ (menu) ? '' : 'd-none'}>
+                <ul className="list-group">
+                    <li className="list-group-item"><Link to='/catalog' onClick={()=>setMenu(!menu)}>Koleksi</Link></li>
+                    <li className="list-group-item">Profile</li>
+                    <li className="list-group-item">Hubungi Kami</li>
+                </ul>
+            </div>
+        )
+    }
+ let breadcrumb = props.breadcrumb
+    return (
+        <div>
+            <div className="navbar bg-light sticky-top">
+                <div className="navbar-brand h1 mb-0">KEDAI EMAS</div>
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                     <div onClick={() => setMenu(!menu)} className="btn btn-outline-primary"><FontAwesomeIcon icon={faBars} /></div></li>
+                </ul>
+            </div>
+
+            <OpenMenu />
+
+            <nav>
+                <ol className="breadcrumb mb-0" style={{backgroundColor:'#ffffff'}}>
+                    { breadcrumb.map((x,key) => <li key={key}  className="breadcrumb-item"><Link to={x.uri} >{x.name}</Link></li>) }
+                </ol>
+            
+            </nav>
+        </div>
+    )
+}
+
+export default connect()(CommonHeader)

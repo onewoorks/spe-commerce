@@ -1,4 +1,5 @@
 const global_state = {
+    header_mobile_menu: false,
     breadcrumbs: [
         { group:'root', uri:'/', name: 'Home'}
     ]

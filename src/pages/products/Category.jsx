@@ -35,6 +35,7 @@ const PickedCategory = (props, category_slug) => {
 }
 
 const ProductCategory = (props) => {
+
     let group_link =
         typeof props.match.params.catalog_slug === 'undefined'
             ? 'catalog'
@@ -47,9 +48,9 @@ const ProductCategory = (props) => {
     const Categories = () => {
         return categories.map((x) => {
             return (
-                <div className="col-6" key={x.id}>
+                <div className="small_product_col col-6" key={x.id}>
                     <Link to={`/${group_link}/${x.id}`}>
-                        <div className="card mb-3 text-center">
+                        <div className="card text-center">
                             <img
                                 className="card-img-top"
                                 src="https://www.25karats.com/articles/wp-content/uploads/2015/07/wedding-rings1.jpg"
@@ -65,9 +66,12 @@ const ProductCategory = (props) => {
 
     return (
         <div className="container">
-            <div className="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2">
+            <div  style={{padding:8}}>
+                <div className="row">
                 <Categories />
             </div>
+            </div>
+            
         </div>
     )
 }

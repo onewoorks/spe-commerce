@@ -1,3 +1,4 @@
+
 .product {
 
 }
@@ -6,3 +7,25 @@
     font-size: 0.8rem;
     font-style: italic;
 }
+
+.row > .small_product_col {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 16px;
+ }
+
+
+ .footer-text {
+     font-size: 0.8em;
+ }
+
+ a { text-decoration: none;}
+
+select { 
+    font-size: 0.8em;
+    color: inherit;
+     height: 40px !important;
+     border:none;
+     padding: 10px 30px;
+     background-color:transparent
+ }

@@ -1,24 +1,47 @@
 import React from 'react'
 
-import ProductCategory from './products/Category.jsx'
+import WidgetHargaEmas from './widgets/HargaEmas.jsx'
+import WidgetCarian from './widgets/Carian.jsx'
+import WidgetLatestProduct from './widgets/LatestProduct.jsx'
+import WidgetKategori from './widgets/Kategori.jsx'
 
 const Homepage = (props) => {
     return (
         <div>
-            <div className="jumbotron">
-                <h1>SPE E COMMERCE</h1>
-                <div className="lead">
-                    This is landing page for kedai emas .....
+            <div className="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img
+                            src="https://wowslider.com/sliders/demo-93/data1/images/sunset.jpg"
+                            alt=""
+                            className="d-block w-100"
+                        />
+                    </div>
+                    <div className="carousel-item">
+                        <img
+                            src="https://wowslider.com/sliders/demo-93/data1/images/landscape.jpg"
+                            alt=""
+                            className="d-block w-100"
+                        />
+                    </div>
+                    <div className="carousel-item">
+                        <img
+                            src="https://wowslider.com/sliders/demo-93/data1/images/lake.jpg"
+                            alt=""
+                            className="d-block w-100"
+                        />
+                    </div>
                 </div>
-                <hr className="my-4" />
-                <p>Selamat hari raya</p>
-                <div className="btn btn-primary btn-lg">Learn More</div>
             </div>
 
+            <br />
+
             <div className="container">
-            <ProductCategory />
+                <WidgetHargaEmas />
+                <WidgetCarian />
+                <WidgetKategori />
+                <WidgetLatestProduct />
             </div>
-            
         </div>
     )
 }
