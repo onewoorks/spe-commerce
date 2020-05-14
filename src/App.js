@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 // import CommonHeader from './pages/common/Header.jsx'
 import Header from './components/Header.jsx'
-import Homepage from './pages/Homepage.js'
+import Home from './pages/Home.jsx'
 import ProductCategory from './pages/products/Category.jsx'
 import ProductProduct from './pages/products/Product.jsx'
 import Contact from './pages/Contact.jsx'
@@ -18,7 +18,7 @@ const App = (props) => {
             <Router>
                 <Header />
                 <Switch>
-                    <Route exact path="/" component={Homepage} />
+                    <Route exact path="/" component={Home} />
                     <Route
                         path="/catalog/:catalog_slug?"
                         component={ProductCategory}
