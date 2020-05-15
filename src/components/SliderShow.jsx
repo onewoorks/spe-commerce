@@ -1,5 +1,6 @@
 import React from 'react'
 import Slider from 'react-slick'
+import {fadeIn} from 'react-animations'
 
 const SliderShow = (props) => {
     const contentBlock = () => {
@@ -79,6 +80,7 @@ const SliderShow = (props) => {
     }
     return (
         <section className="slide1">
+        test sini
             <div className="wrap-slick1">
                 <div className="slick1">
                     <Slider {...settings}>{contentBlock()}</Slider>

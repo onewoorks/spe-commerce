@@ -1,401 +1,45 @@
 import React from 'react'
 import Slider from 'react-slick'
+import { Link } from 'react-router-dom'
+import ProductBlock from './ProductBlock.jsx'
 
 const FeaturedProduct = (props) => {
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+    }
+
+    const ProductSliders = (props) => {
+        let items = []
+        let i = 0
+        do {
+            items.push(
+                <div className="item-slick2 p-l-15 p-r-15">
+                    <ProductBlock
+                        product_data={{
+                            image: 'images/item-05.jpg',
+                            name: 'Denim jacket blue 2',
+                            price: '$92.50',
+                            label: 'sale',
+                        }}
+                    />
+                </div>
+            )
+            i++
+        } while (i < 10)
+        return <Slider {...settings}>{items}</Slider>
     }
     return (
         <section className="newproduct bgwhite p-t-45 p-b-105">
-           
             <div className="container">
                 <div className="sec-title p-b-60">
                     <h3 className="m-text5 t-center">Featured Products</h3>
                 </div>
 
-                <div className="wrap-slick2">
-                    <Slider {...settings}>
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                    <img
-                                        src="images/item-02.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Herschel supply co 25l
-                                    </a>
-
-                                    <span className="block2-price m-text6 p-r-5">
-                                        $75.00
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative">
-                                    <img
-                                        src="images/item-03.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Denim jacket blue
-                                    </a>
-
-                                    <span className="block2-price m-text6 p-r-5">
-                                        $92.50
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative">
-                                    <img
-                                        src="images/item-05.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Coach slim easton black
-                                    </a>
-
-                                    <span className="block2-price m-text6 p-r-5">
-                                        $165.90
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                                    <img
-                                        src="images/item-07.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Frayed denim shorts
-                                    </a>
-
-                                    <span className="block2-oldprice m-text7 p-r-5">
-                                        $29.50
-                                    </span>
-
-                                    <span className="block2-newprice m-text8 p-r-5">
-                                        $15.90
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                    <img
-                                        src="images/item-02.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Herschel supply co 25l
-                                    </a>
-
-                                    <span className="block2-price m-text6 p-r-5">
-                                        $75.00
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative">
-                                    <img
-                                        src="images/item-03.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Denim jacket blue
-                                    </a>
-
-                                    <span className="block2-price m-text6 p-r-5">
-                                        $92.50
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative">
-                                    <img
-                                        src="images/item-05.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Coach slim easton black
-                                    </a>
-
-                                    <span className="block2-price m-text6 p-r-5">
-                                        $165.90
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="item-slick2 p-l-15 p-r-15">
-                            <div className="block2">
-                                <div className="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                                    <img
-                                        src="images/item-07.jpg"
-                                        alt="IMG-PRODUCT"
-                                    />
-
-                                    <div className="block2-overlay trans-0-4">
-                                        <a
-                                            href="#"
-                                            className="block2-btn-addwishlist hov-pointer trans-0-4"
-                                        >
-                                            <i
-                                                className="icon-wishlist icon_heart_alt"
-                                                aria-hidden="true"
-                                            ></i>
-                                            <i
-                                                className="icon-wishlist icon_heart dis-none"
-                                                aria-hidden="true"
-                                            ></i>
-                                        </a>
-
-                                        <div className="block2-btn-addcart w-size1 trans-0-4">
-                                            <button className="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                                Add to Cart
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="block2-txt p-t-20">
-                                    <a
-                                        href="product-detail.html"
-                                        className="block2-name dis-block s-text3 p-b-5"
-                                    >
-                                        Frayed denim shorts
-                                    </a>
-
-                                    <span className="block2-oldprice m-text7 p-r-5">
-                                        $29.50
-                                    </span>
-
-                                    <span className="block2-newprice m-text8 p-r-5">
-                                        $15.90
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </Slider>
-                </div>
+                <ProductSliders />
             </div>
         </section>
     )
